@@ -24,7 +24,10 @@
     "webpack": "^2.5.1"
   },
   "dependencies": {
+    "knex": "^0.13.0",
     "koa": "^2.2.0",
-    "koa-router": "^7.1.1"
+    "koa-router": "^7.1.1",
+    "mysql2": "^1.2.0",
+    "objection": "^0.7.12"
   }
 }
