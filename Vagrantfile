@@ -45,7 +45,9 @@ Vagrant.configure("2") do |config|
 
         sudo apt install redis-server
 
-        mysql -e "CREATE DATABASE dbtrack" -uroot -proot
+        sudo npm install knex -g
+
+        mysql -e "CREATE DATABASE track CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci" -uroot -proot
     SCRIPT
 
     config.vm.provision "shell", inline: $script, privileged: false
