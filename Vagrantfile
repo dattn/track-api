@@ -34,18 +34,15 @@ Vagrant.configure("2") do |config|
     end
 
     $script = <<-SCRIPT
+        curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
         sudo apt update
 
         sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
         sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
-        sudo apt install -y mysql-server mysql-client
 
-        curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
-        sudo apt install -y nodejs
+        sudo apt install -y mysql-server mysql-client nodejs redis-server build-essential
 
-        sudo apt install redis-server
-
-        sudo npm install knex -g
+        sudo npm install -g knex node-gyp
 
         mysql -e "CREATE DATABASE track CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci" -uroot -proot
     SCRIPT
