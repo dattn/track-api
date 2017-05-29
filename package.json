@@ -1,34 +1,35 @@
 {
-    "name": "track-api",
-    "version": "0.0.0",
-    "description": "track.lu API Server",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/dattn/track-api.git"
-    },
-    "author": "Daniel Duton <daniel@duton.lu>",
-    "private": true,
-    "bugs": {
-        "url": "https://github.com/dattn/track-api/issues"
-    },
-    "homepage": "https://github.com/dattn/track-api#readme",
-    "devDependencies": {
-        "babel-core": "^6.24.1",
-        "babel-eslint": "^7.2.3",
-        "babel-loader": "^7.0.0",
-        "babel-preset-env": "^1.4.0",
-        "webpack": "^2.5.1"
-    },
-    "dependencies": {
-        "bcrypt": "^1.0.2",
-        "knex": "^0.13.0",
-        "koa": "^2.2.0",
-        "koa-router": "^7.1.1",
-        "mysql2": "^1.2.0",
-        "objection": "^0.7.12"
-    }
+  "name": "track-api",
+  "version": "0.0.0",
+  "description": "track.lu API Server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dattn/track-api.git"
+  },
+  "author": "Daniel Duton <daniel@duton.lu>",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/dattn/track-api/issues"
+  },
+  "homepage": "https://github.com/dattn/track-api#readme",
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.4.0",
+    "webpack": "^2.5.1"
+  },
+  "dependencies": {
+    "bcrypt": "^1.0.2",
+    "knex": "^0.13.0",
+    "koa": "^2.2.0",
+    "koa-json-body": "^5.3.0",
+    "koa-router": "^7.1.1",
+    "mysql2": "^1.2.0",
+    "objection": "^0.7.12"
+  }
 }
