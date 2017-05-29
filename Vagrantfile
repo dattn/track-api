@@ -5,14 +5,14 @@ VMname = File.basename(Dir.getwd) + "-vagrant"
 
 Vagrant.configure("2") do |config|
 
-    config.vm.box = "ubuntu/trusty64"
+    config.vm.box = "dattn/ubuntu16"
 
     config.vm.network "forwarded_port", guest: 80, host: 8000
 
     config.vm.synced_folder "./", "/opt/track-api/",
         owner: "vagrant",
         group: "www-data",
-        mount_options: ["dmode=775,fmode=664"]
+        mount_options: ["dmode=775,fmode=775"]
 
     config.vm.provider "virtualbox" do |vb|
         vb.memory = 1024
@@ -42,7 +42,7 @@ Vagrant.configure("2") do |config|
 
         sudo apt install -y mysql-server mysql-client nodejs redis-server build-essential
 
-        sudo npm install -g knex node-gyp
+        sudo npm install -g knex
 
         mysql -e "CREATE DATABASE track CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci" -uroot -proot
     SCRIPT
