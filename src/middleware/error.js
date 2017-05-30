@@ -16,7 +16,7 @@ export default () => async (ctx, next) => {
                 };
                 ctx.status = err.status || 500;
                 resolve();
-            }, 1000 - Date.now() + startTime);
+            }, Math.max(1000 - Date.now() + startTime, 0));
         });
     }
 };
