@@ -22,7 +22,8 @@
     "babel-loader": "^7.0.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.4.0",
-    "webpack": "^2.5.1"
+    "webpack": "^2.5.1",
+    "webpack-node-externals": "^1.6.0"
   },
   "dependencies": {
     "bcrypt": "^1.0.2",

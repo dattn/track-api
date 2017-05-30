@@ -1,8 +1,10 @@
-const Webpack = require('webpack');
+require('webpack');
 const path = require('path');
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
     target: 'node',
+    externals: [ nodeExternals() ],
     context: path.resolve(__dirname, './src'),
     entry: {
         app: './app.js',
@@ -19,19 +21,5 @@ module.exports = {
                 loader: 'babel-loader'
             }],
         }, ],
-    },
-    plugins: [
-        new Webpack.IgnorePlugin(new RegExp('^(' + [
-            'mariasql',
-            'mssql',
-            'mysql',
-            'oracle',
-            'oracledb',
-            'pg-query-stream',
-            'sqlite3',
-            'strong-oracle',
-            'pg-native',
-            'pg'
-        ].join('|') + ')$'), /\/knex\//)
-    ]
+    }
 };
