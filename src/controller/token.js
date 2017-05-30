@@ -1,4 +1,12 @@
+import User from '../model/user';
+
 export const generate = ctx => {
-    console.log(ctx.request);
-    ctx.body = ctx.request.body;
+    return User
+        .query()
+        .where('username', ctx.request.body.username)
+        .then(users => {
+            if (users[0]) {
+                ctx.body = users[0];
+            }
+        });
 };
