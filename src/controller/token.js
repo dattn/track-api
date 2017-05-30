@@ -1,5 +1,6 @@
 import User from '../model/user';
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 
 export const generate = async ctx => {
     // get user from database
@@ -15,5 +16,15 @@ export const generate = async ctx => {
         return;
     }
 
-    ctx.body = user;
+    // create jwt
+    let token = await jwt.sign({
+        id: user.id,
+        username: user.username
+    }, 'TODO_INSERT_SECRET_HERE', {
+        expiresIn: '15m'
+    });
+
+    ctx.body = {
+        token
+    };
 };
