@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "bcrypt": "^1.0.2",
+    "dotenv": "^4.0.0",
     "jsonwebtoken": "^7.4.1",
     "knex": "^0.13.0",
     "koa": "^2.2.0",
