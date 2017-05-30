@@ -1,4 +1,4 @@
-require('webpack');
+const Webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
@@ -20,4 +20,18 @@ module.exports = {
             }],
         }, ],
     },
+    plugins: [
+        new Webpack.IgnorePlugin(new RegExp('^(' + [
+            'mariasql',
+            'mssql',
+            'mysql',
+            'oracle',
+            'oracledb',
+            'pg-query-stream',
+            'sqlite3',
+            'strong-oracle',
+            'pg-native',
+            'pg'
+        ].join('|') + ')$'), /\/knex\//)
+    ]
 };

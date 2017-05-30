@@ -1,3 +1,4 @@
+import './init/database';
 import Koa from 'koa';
 import Router from 'koa-router';
 import JsonBody from 'koa-json-body';

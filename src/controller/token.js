@@ -1,12 +1,10 @@
 import User from '../model/user';
 
-export const generate = ctx => {
-    return User
+export const generate = async ctx => {
+    let [ user ] = await User
         .query()
-        .where('username', ctx.request.body.username)
-        .then(users => {
-            if (users[0]) {
-                ctx.body = users[0];
-            }
-        });
+        .where('username', ctx.request.body.username);
+    if (user) {
+        ctx.body = user;
+    }
 };
