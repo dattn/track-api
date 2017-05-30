@@ -2,11 +2,13 @@ import './init/database';
 import Koa from 'koa';
 import Router from 'koa-router';
 import JsonBody from 'koa-json-body';
+import TokenMiddleware from './middleware/token';
 import { handle } from './controller';
 
 const app = new Koa();
 const router = new Router();
 
+app.use(TokenMiddleware());
 app.use(JsonBody({
     strict: true
 }));
