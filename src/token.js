@@ -19,6 +19,8 @@ export const verify = token => {
     return new Promise((resolve, reject) => {
         jwt.verify(token, config('token.secret'), (err, decoded) => {
             if (err) {
+                err.status = 403;
+                err.publicMessage = 'Invalid Token';
                 reject(err);
             } else {
                 resolve(decoded);
